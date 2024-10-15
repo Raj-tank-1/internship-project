@@ -1,0 +1,264 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li a {
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    color: #ff6200;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-section .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-section .animated-text {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInDown 2s ease forwards;
+}
+
+.hero-section .hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards 1s;
+}
+
+.hero-section .explore-button {
+    padding: 10px 20px;
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+    opacity: 0;
+    margin-top: 20px;
+    animation: fadeInUp 2s ease forwards 1.5s;
+}
+
+.hero-section .explore-button:hover {
+    background-color: #ff4500;
+}
+
+/* Cool Highlights Section */
+.cool-section {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.cool-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.highlights-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.highlight-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.highlight-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ff6200;
+}
+
+.highlight-card p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.shop-now-button {
+    background-color: #ff7f50;
+    padding: 10px 25px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    animation: fadeInUp 3s ease forwards;
+}
+
+.shop-now-button:hover {
+    background-color: #ff4500;
+}
+
+/* Fade-in Animations */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .highlights-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .highlight-card {
+        width: 80%;
+    }
+
+    .hero-section .animated-text {
+        font-size: 3rem;
+    }
+
+    .hero-section .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar nav ul li {
+        margin: 10px 0;
+    }
+
+    .highlights-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highlight-card {
+        width: 90%;
+    }
+
+    .hero-section .animated-text {
+        font-size: 2.5rem;
+    }
+
+    .hero-section .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-section {
+        padding: 20px;
+    }
+}
